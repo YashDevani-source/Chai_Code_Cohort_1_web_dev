@@ -10,9 +10,14 @@ if(!Array.prototype.myForEach){
     Array.prototype.myForEach = function(userfn){
         const originalArr = this; // current object ke taraf point karta hai
 
-        for(let i = 0; i<userfn.length;i++){
-            userfn(originalArr[i],i)
+        for(let i = 0; i < originalArr.length;i++){
+            userfn(originalArr[i],i);
+            
         }
     };
 }
+
+arr.myForEach(function(value,key){
+    console.log(`this is value ${value} and this is key ${key}`);
+})
 
